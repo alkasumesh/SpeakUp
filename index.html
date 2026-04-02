@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SpeakUp – English Assistant for Malayalis</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="bg-orbs">
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+  </div>
+
+  <header>
+    <div class="logo">SpeakUp <span class="logo-ml">മലയാളം → English</span></div>
+    <div class="streak-badge">🔥 <span id="streakCount">0</span> day streak</div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="hero-label">AI-Powered English Coach</p>
+      <h1 class="hero-title">Talk. Learn.<br><em>Improve.</em></h1>
+      <p class="hero-sub">Speak in Malayalam or English — your AI tutor listens, corrects, and teaches you naturally.</p>
+    </section>
+
+    <div class="mode-tabs">
+      <button class="tab active" data-mode="conversation" onclick="setMode('conversation')">💬 Conversation</button>
+      <button class="tab" data-mode="pronunciation" onclick="setMode('pronunciation')">🎯 Pronunciation</button>
+      <button class="tab" data-mode="grammar" onclick="setMode('grammar')">📝 Grammar Fix</button>
+    </div>
+
+    <div class="topic-bar" id="topicBar">
+      <span class="topic-label">Topic:</span>
+      <button class="topic-chip active" onclick="setTopic(this, 'daily life')">🏠 Daily Life</button>
+      <button class="topic-chip" onclick="setTopic(this, 'job interview')">💼 Job Interview</button>
+      <button class="topic-chip" onclick="setTopic(this, 'travel')">✈️ Travel</button>
+      <button class="topic-chip" onclick="setTopic(this, 'shopping')">🛍️ Shopping</button>
+      <button class="topic-chip" onclick="setTopic(this, 'health')">🏥 Health</button>
+    </div>
+
+    <div class="chat-container" id="chatContainer">
+      <div class="chat-welcome">
+        <div class="ai-avatar">🤖</div>
+        <div class="welcome-bubble">
+          <p>നമസ്കാരം! 👋 I'm your English coach. Press the mic and speak — in Malayalam or English. I'll help you improve!</p>
+          <span class="bubble-meta">AI Tutor • Ready</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="input-area">
+      <div class="status-bar">
+        <span id="statusText" class="status-idle">Ready to listen…</span>
+        <span id="langIndicator" class="lang-tag">ml-IN</span>
+      </div>
+
+      <div class="controls">
+        <button class="btn-secondary" onclick="toggleLang()" title="Switch Language">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 8l6 6"/><path d="M4 14l6-6 2-2"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="M22 22l-5-10-5 10"/><path d="M14 18h6"/></svg>
+        </button>
+
+        <button class="btn-mic" id="micBtn" onclick="toggleListening()">
+          <div class="mic-rings">
+            <div class="ring ring1"></div>
+            <div class="ring ring2"></div>
+          </div>
+          <svg class="mic-icon" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="12" y1="19" x2="12" y2="23" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="8" y1="23" x2="16" y2="23" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+
+        <button class="btn-secondary" onclick="clearChat()" title="Clear Chat">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4h6v2"/></svg>
+        </button>
+      </div>
+
+      <p class="hint-text" id="hintText">Tap the mic and start speaking</p>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-card">
+        <span class="stat-num" id="sessionCount">0</span>
+        <span class="stat-label">Sessions</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-num" id="correctionCount">0</span>
+        <span class="stat-label">Corrections</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-num" id="wordCount">0</span>
+        <span class="stat-label">Words Learned</span>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
