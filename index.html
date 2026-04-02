@@ -4,9 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SpeakUp – English Assistant for Malayalis</title>
+
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
   <div class="bg-orbs">
@@ -60,19 +65,15 @@
 
       <div class="controls">
         <button class="btn-secondary" onclick="toggleLang()" title="Switch Language">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 8l6 6"/><path d="M4 14l6-6 2-2"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="M22 22l-5-10-5 10"/><path d="M14 18h6"/></svg>
+          🌐
         </button>
 
         <button class="btn-mic" id="micBtn" onclick="toggleListening()">
-          <div class="mic-rings">
-            <div class="ring ring1"></div>
-            <div class="ring ring2"></div>
-          </div>
-          <svg class="mic-icon" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="12" y1="19" x2="12" y2="23" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="8" y1="23" x2="16" y2="23" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          🎤
         </button>
 
         <button class="btn-secondary" onclick="clearChat()" title="Clear Chat">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4h6v2"/></svg>
+          🗑️
         </button>
       </div>
 
@@ -95,6 +96,8 @@
     </div>
   </main>
 
-  <script src="script.js"></script>
+  <!-- 🔥 IMPORTANT FIX: FORCE JS RELOAD -->
+  <script src="script.js?v=2"></script>
+
 </body>
 </html>
