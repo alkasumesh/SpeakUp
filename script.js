@@ -280,24 +280,25 @@ Return ONLY valid JSON. No extra text.
 }
 `;
 
-  try {
-    const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        "Authorization": "Bearer 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",
-        "Content-Type": "application/json",
-        "HTTP-Referer": "http://localhost",
-        "X-Title": "SpeakUp AI"
-      },
-      body: JSON.stringify({
-        model: "openai/gpt-3.5-turbo",
-        temperature: 0.2,
-        messages: [
-          { role: "system", content: systemPrompt },
-          { role: "user", content: userText }
-        ]
-      })
-    });
+try {
+  const response = await fetch("http://localhost:3000/chat", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      message: userText
+    })
+  });
+
+  const data = await response.json();
+  const raw = data.choices?.[0]?.message?.content || "";
+
+} catch (error) {
+  console.log(error);
+}
+const data = await response.json();
+const raw = data.choices?.[0]?.message?.content || "";
 
     const data = await response.json();
     const raw = data.choices?.[0]?.message?.content || "";
