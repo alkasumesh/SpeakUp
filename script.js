@@ -281,7 +281,7 @@ Return ONLY valid JSON. No extra text.
 `;
 
 try {
-  const response = await fetch("http://localhost:3000/chat", {
+  const response = await fetch("https://speakup-backend-emxk.onrender.com", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
